@@ -9,6 +9,7 @@ const verifytk = (req, res, next) => {
 
     // const heads = req.headers['authorization'].split(" ")[1];
     const heads = req.headers['authorization'];
+    console.log(heads);
     // console.log(`from bakend token -> ${heads}`);
 
     jwt.verify(String(heads), 'shubh', (err, data) => {

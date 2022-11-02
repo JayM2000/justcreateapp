@@ -71,7 +71,7 @@ export  const logins = ({email,password}) => async dispatch => {
     const body = JSON.stringify({em:email,pass:password});
 
     try{
-        const val = await axios.post('/rout/login',body,config);
+        const val = await axios.post('https://justcreteapp.herokuapp.com/rout/login',body,config);
         
         if(val.data.st === 404){
             throw `${val.data.mess}`;

@@ -18,6 +18,10 @@ app.use(cors());
 app.use('/rout',require('./routes/routes_user'));
 app.use('/routpost',require('./routes/post'));
 
+app.get("/",(req,res)=>{
+  res.json("server start")
+})
+
 // SERVER PUSHING TO HEROKU
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));

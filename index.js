@@ -13,7 +13,7 @@ const cors = require('cors');
 
 app.use(express.json());
 
-app.use(cors({credentials:true,origin:"http://localhost:3000"}));
+app.use(cors({credentials:true,origin:"https://starlit-malasada-df2b99.netlify.app/"}));
 
 app.use('/rout',require('./routes/routes_user'));
 app.use('/routpost',require('./routes/post'));

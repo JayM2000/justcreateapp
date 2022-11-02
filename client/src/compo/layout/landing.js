@@ -1,0 +1,39 @@
+import React from 'react'
+import { Link,Navigate  } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+const Land = ({ isauth }) => {
+    
+    if (isauth) {
+        return <Navigate to="/dashb" />;
+      }
+
+    return (
+        <section className="landing">
+            <div className="dark-overlay">
+                <div className="landing-inner">
+                    <h1 className="x-large">Developer Connector</h1>
+                    <p className="lead">
+                        Create a developer profile/portfolio, share posts and get help from
+                        other developers
+                    </p>
+                    <div className="buttons">
+                        <Link to='/reg' className="btn btn-primary">Sign Up</Link>
+                        <Link to='/log' className="btn btn-light">Login</Link>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+};
+
+Land.propTypes = {
+    isauth: PropTypes.bool
+  };
+  
+  const mapStateToProps = (state) => ({
+    isauth: state.auth.isAuthenticated
+  });
+  
+  export default connect(mapStateToProps)(Land);

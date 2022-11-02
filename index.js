@@ -5,7 +5,7 @@ const val = require('./mongoconnection/mongos.js');
 val();
 
 // const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({
 //     extended: true
@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use('/rout',require('./routes/routes_user'));
 app.use('/routpost',require('./routes/post'));
-app.use(cors());
+// app.use(cors());
 
 app.get("/",(req,res)=>{
   res.json("server start")

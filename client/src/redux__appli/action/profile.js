@@ -6,7 +6,7 @@ import setalert from './alert';
 export const profileall = () =>async dispatch => {
 
     try {
-        const dt = await ax.get('/rout/dash');
+        const dt = await ax.get('https://justcreteapp.herokuapp.com/rout/dash');
 
         dispatch({
             type:'profilesu',

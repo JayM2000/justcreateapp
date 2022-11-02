@@ -14,21 +14,22 @@ const cors = require('cors');
 app.use(express.json());
 
 // app.use(cors({credentials:true,origin:"http://localhost:3000"}));
-app.use(cors());
+
 app.use('/rout',require('./routes/routes_user'));
 app.use('/routpost',require('./routes/post'));
+app.use(cors());
 
 app.get("/",(req,res)=>{
   res.json("server start")
 })
 
 // SERVER PUSHING TO HEROKU
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
-    app.get('*',(req,res) => {
-      res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-    });
-  }
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static('client/build'));
+//     app.get('*',(req,res) => {
+//       res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+//     });
+//   }
 
 const port = process.env.PORT || 5000;
 

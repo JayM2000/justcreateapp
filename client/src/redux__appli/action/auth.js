@@ -10,7 +10,7 @@ export const loads = () => async dispatch => {
             }
         };
 
-        const val = await axios.get('/rout/autho',config);
+        const val = await axios.get('https://justcreteapp.herokuapp.com/rout/autho',config);
 
         if(val.data.st === 'not'){
             throw 'e';
